@@ -12,12 +12,14 @@ import java.io.IOException;
 class Main {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-int wybor;
-    System.out.println("1-dopisz studentow, 2- wypisz studentow, 3" );
+int wybor; 
+System.out.println("0- zamknij program, 1-dopisz studentow, 2- wypisz studentow, " );
   
 wybor=scan.nextInt();
     switch(wybor){
-      case 1:
+      case 0:{
+        System.exit(0);}
+      case 1:{
         System.out.println("Podaj imie");
            String name = scan.next(); 
         System.out.println("Podaj nazwisko");
@@ -27,13 +29,13 @@ wybor=scan.nextInt();
         System.out.println("Podaj wiek");
           int age = scan.nextInt();
          try {
-Service s = new Service();
+        Service s = new Service();
       s.addStudent(new Student(name, surname, data, age ));
         } catch (IOException e) {}
-        
-      case 2:
-    
-        
+        break;
+      }
+      case 2:{
+  
        try {
 Service s = new Service();
       var students = s.getStudents();
@@ -41,7 +43,7 @@ Service s = new Service();
         System.out.println(current.ToString());
       }
     } catch (IOException e) {}
-      case 3:
+      }
       
    }
   }
