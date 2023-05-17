@@ -13,14 +13,24 @@ class Main {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
 int wybor;
-    System.out.println("1-zamknij program, 2- wypisz studentow, 3-dopisz studentow" );
+    System.out.println("1-dopisz studentow, 2- wypisz studentow, 3" );
   
 wybor=scan.nextInt();
     switch(wybor){
       case 1:
-        System.exit(0);
+        
+        System.out.println("Podaj imie");
+           String name = scan.next();               
+        System.out.println("Podaj wiek");
+          int age = scan.nextInt();
+         try {
+Service s = new Service();
+      s.addStudent(new Student(name, age ));
+        } catch (IOException e) {}
         
       case 2:
+
+        
        try {
 Service s = new Service();
       var students = s.getStudents();
