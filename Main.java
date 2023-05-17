@@ -22,10 +22,7 @@ wybor=scan.nextInt();
         
       case 2:
        try {
-      Service s = new Service();
-      s.addStudent(new Student("Krzysztof", 20));
-      s.addStudent(new Student("Janusz", 40));
-
+Service s = new Service();
       var students = s.getStudents();
       for(Student current : students) {
         System.out.println(current.ToString());
