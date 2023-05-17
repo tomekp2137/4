@@ -22,11 +22,13 @@ wybor=scan.nextInt();
            String name = scan.next(); 
         System.out.println("Podaj nazwisko");
             String surname = scan.next();
+        System.out.println("Podaj date urodzenia w formacie dd-mm-rrrr");
+            String data = scan.next();
         System.out.println("Podaj wiek");
           int age = scan.nextInt();
          try {
 Service s = new Service();
-      s.addStudent(new Student(name, surname, age ));
+      s.addStudent(new Student(name, surname, data, age ));
         } catch (IOException e) {}
         
       case 2:
