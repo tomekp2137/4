@@ -18,14 +18,15 @@ int wybor;
 wybor=scan.nextInt();
     switch(wybor){
       case 1:
-        
         System.out.println("Podaj imie");
-           String name = scan.next();               
+           String name = scan.next(); 
+        System.out.println("Podaj nazwisko");
+            String surname = scan.next();
         System.out.println("Podaj wiek");
           int age = scan.nextInt();
          try {
 Service s = new Service();
-      s.addStudent(new Student(name, age ));
+      s.addStudent(new Student(name, surname, age ));
         } catch (IOException e) {}
         
       case 2:
@@ -38,9 +39,6 @@ Service s = new Service();
         System.out.println(current.ToString());
       }
     } catch (IOException e) {}
-
-
-        
       case 3:
       
    }
